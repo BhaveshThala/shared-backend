@@ -20,9 +20,6 @@ Install all the npm packages. Go into the project folder and type the following 
 ```bash
 npm install
 ```
-
-In order to run the application Type the following command
-
 Update the config.js file with your database credentials.
 ```bash 
 const dbConfig = {
@@ -34,6 +31,8 @@ const dbConfig = {
 }
 ```
 Update this object to connect with database.
+
+In order to run the application Type the following command
 
 ```bash
 node app.js
