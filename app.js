@@ -8,7 +8,7 @@ const sharedOrm = require('shared-orm-library')
 var app = express();
 const winston = require("winston");
 
-// Set up logger
+//logger setup
 const logger = winston.createLogger({
     level: "info",
     format: winston.format.json(),
