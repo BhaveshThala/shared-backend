@@ -8,7 +8,7 @@ This Project is a Simple Node and Express js Project which demonstrates the foll
 
 ## Prerequisites
 
-### Install Node JS
+## Install Node JS
 Refer to https://nodejs.org/en/ to install nodejs
 
 ## Cloning and Running the Application in local
@@ -22,6 +22,18 @@ npm install
 ```
 
 In order to run the application Type the following command
+
+Update the config.js file with your database credentials.
+```bash 
+const dbConfig = {
+    databasename : "",
+    username : "",
+    password : "",
+    host : "",
+    dbtype : "postgres"
+}
+```
+Update this object to connect with database.
 
 ```bash
 node app.js

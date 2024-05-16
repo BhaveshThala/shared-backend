@@ -30,7 +30,7 @@ app.use((req, res, next) => {
     next();
 });
 
-//Intiliaze Db and Migrations
+//Intializing Db and Migrations
 (async () => {
     await sharedOrm.initializeDb(databaseConfig);
 })();

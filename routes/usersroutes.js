@@ -3,11 +3,12 @@ const router = express.Router()
 const { databaseConfig } = require('../config.js')
 const { getUserModel } = require('shared-orm-library/src/entities/Users.js')
 
+const usersModel = getUserModel(databaseConfig)
+
 //Get All Users Information
 router.get("/", async function (req, res) {
     try {
-        const users = getUserModel(databaseConfig)
-        var record = await users.findAll({
+        var record = await usersModel.findAll({
             attributes: ['Id', 'FirstName', 'LastName', 'Email'],
         })
         if (record.length <= 0) {
@@ -23,9 +24,8 @@ router.get("/", async function (req, res) {
 //Insert new Users
 router.post("/", async (req, res) => {
     try {
-        const users = getUserModel(databaseConfig)
         var userInput = req.body;
-        await users.create(
+        await usersModel.create(
             {
                 Email: userInput.email,
                 Password: userInput.password,
@@ -48,8 +48,7 @@ router.get("/:userId", async function (req, res) {
         if (isNaN(userId)) {
             return res.status(400).json({ "message": "Invalid Input" });
         }
-        const users = getUserModel(databaseConfig)
-        var record = await users.findAll({
+        var record = await usersModel.findAll({
             where: {
                 Id: userId,
             },

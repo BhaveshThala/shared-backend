@@ -1,8 +1,8 @@
-const localConfig = {
+const dbConfig = {
     databasename : "",
     username : "",
     password : "",
     host : "",
     dbtype : "postgres"
 }
-module.exports = { databaseConfig: localConfig }
+module.exports = { databaseConfig: dbConfig }
