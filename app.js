@@ -45,5 +45,5 @@ app.get('/', async function (req, res) {
 let port = process.env.PORT || 3001
 
 app.listen(port, function () {
-    console.log(`Example app listening on port ${port}!`);
+    console.log(`app listening on port ${port}!`);
 });
