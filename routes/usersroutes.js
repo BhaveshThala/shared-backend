@@ -41,7 +41,7 @@ router.post("/", async (req, res) => {
     }
 })
 
-//Get Specified User Information
+//Get Specific User Information by userId
 router.get("/:userId", async function (req, res) {
     try {
         var userId = parseInt(req.params.userId)
