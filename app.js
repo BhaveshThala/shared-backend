@@ -1,7 +1,9 @@
 var express = require('express');
 const bodyParser = require('body-parser')
 const cors = require('cors')
+const {databaseConfig} = require('./config.js')
 const userRoutes = require('./routes/usersroutes.js')
+const sharedOrm = require('shared-orm-library')
 
 var app = express();
 const winston = require("winston");
@@ -28,10 +30,15 @@ app.use((req, res, next) => {
     next();
 });
 
+//Intiliaze Db and Migrations
+(async () => {
+    await sharedOrm.initializeDb(databaseConfig);
+})();
+
 //for Users routes
 app.use('/users', userRoutes);
 
-app.get('/', function (req, res) {
+app.get('/', async function (req, res) {
     res.status(200).json({ "message": "Server is up and running" })
 });
 
