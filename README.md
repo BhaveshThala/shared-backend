@@ -3,7 +3,7 @@
 ## What is the use of this Repo
 
 This Project is a Simple Node and Express js Project which demonstrates the following
-1. Creating a Api in Node with Express js
+1. Creating an Api in Node with Express js
 2. Setting up Middlewares for Request Parsing
 
 ## Prerequisites
