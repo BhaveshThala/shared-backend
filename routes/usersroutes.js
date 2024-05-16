@@ -20,6 +20,7 @@ router.get("/", async function (req, res) {
     }
 });
 
+//Insert new Users
 router.post("/", async (req, res) => {
     try {
         const users = getUserModel(databaseConfig)
