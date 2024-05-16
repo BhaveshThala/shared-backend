@@ -37,9 +37,5 @@ In order to run the application Type the following command
 ```bash
 node app.js
 ```
-or
-```bash
-nodemon app.js
-```
 
 The Application Runs on **localhost:3001**
